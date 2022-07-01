@@ -2,7 +2,7 @@
 
 **Encyclopedia of challenges in Elixir**
 
-## Installation
+## Installation Guide
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 by adding `exlibfunc` to your list of dependencies in `mix.exs`:
