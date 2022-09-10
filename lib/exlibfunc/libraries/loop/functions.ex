@@ -1,4 +1,4 @@
-defmodule Exlibfunc.Libraries.Basic.Function do
+defmodule Exlibfunc.Libraries.Loop.Function do
 
   def anonfunc(list) do
     for x <- list, do: x*x
