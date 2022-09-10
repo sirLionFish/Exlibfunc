@@ -1,4 +1,9 @@
 defmodule Exlibfunc do
+  @moduledoc """
+  Exlibfunc keeps the contexts that define your domain
+  and business logic.
 
-  def hello, do: "World"
+  Contexts are also responsible for managing your data, regardless
+  if it comes from the database, an external API or others.
+  """
 end

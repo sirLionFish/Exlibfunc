@@ -1,16 +1,4 @@
 # Exlibfunc
 
-**Encyclopedia of challenges in Elixir**
-
-## Installation Guide
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `exlibfunc` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:exlibfunc, "~> 0.1.0"}
-  ]
-end
-```
+Updated from regular mix.new into mix phx.new --liveview
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
