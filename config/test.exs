@@ -17,14 +17,17 @@ config :exlibfunc, Exlibfunc.Repo,
 # you can enable the server option below.
 config :exlibfunc, ExlibfuncWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "TDz2nhR8ipLZq4l0QbpG+kUE+BcBO95AlYl48xuT2DD0n+X0qJnSg5NttMallsTz",
+  secret_key_base: "9StR+RDqDzJbjyylCPwRf+vPi7d0k/joiRuV83C8Snp44ZkhOUK5ky0f1NqjWTbA",
   server: false
 
 # In test we don't send emails.
 config :exlibfunc, Exlibfunc.Mailer, adapter: Swoosh.Adapters.Test
 
+# Disable swoosh api client as it is only required for production adapters.
+config :swoosh, :api_client, false
+
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime

@@ -7,7 +7,8 @@ defmodule ExlibfuncWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_exlibfunc_key",
-    signing_salt: "OCZYBaU8"
+    signing_salt: "Pcn+tK2z",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -20,7 +21,7 @@ defmodule ExlibfuncWeb.Endpoint do
     at: "/",
     from: :exlibfunc,
     gzip: false,
-    only: ~w(assets fonts images favicon.ico robots.txt)
+    only: ExlibfuncWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

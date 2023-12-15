@@ -19,15 +19,15 @@ defmodule ExlibfuncWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint ExlibfuncWeb.Endpoint
+
+      use ExlibfuncWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import ExlibfuncWeb.ConnCase
-
-      alias ExlibfuncWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint ExlibfuncWeb.Endpoint
     end
   end
 

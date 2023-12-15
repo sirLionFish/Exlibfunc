@@ -8,16 +8,16 @@ defmodule Exlibfunc.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
-      Exlibfunc.Repo,
-      # Start the Telemetry supervisor
       ExlibfuncWeb.Telemetry,
-      # Start the PubSub system
+      Exlibfunc.Repo,
+      {DNSCluster, query: Application.get_env(:exlibfunc, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Exlibfunc.PubSub},
-      # Start the Endpoint (http/https)
-      ExlibfuncWeb.Endpoint
+      # Start the Finch HTTP client for sending emails
+      {Finch, name: Exlibfunc.Finch},
       # Start a worker by calling: Exlibfunc.Worker.start_link(arg)
-      # {Exlibfunc.Worker, arg}
+      # {Exlibfunc.Worker, arg},
+      # Start to serve requests, typically the last entry
+      ExlibfuncWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
