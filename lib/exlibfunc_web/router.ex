@@ -25,6 +25,9 @@ defmodule ExlibfuncWeb.Router do
     live "/sales", SalesLive
     live "/flights", FlightsLive
     live "/servers", ServerLive
+    live "/donations", DonationLive
+    live "/games", GameLive
+    live "volunteers", VolunteerLive
   end
 
   if Application.compile_env(:exlibfunc, :dev_routes) do

@@ -11,6 +11,17 @@
 # and so on) as they will fail if something goes wrong.
 alias Exlibfunc.Repo
 alias Exlibfunc.Servers.Server
+alias Exlibfunc.Games.Manager
+alias Exlibfunc.Donations.Donation
+
+
+Manager.create_game(%{name: "Counter-Strike: Global Offensive", appid: 730})
+
+Manager.create_game(%{name: "Marvel's Spider-Man: Miles Morales", appid: 1817190})
+
+Manager.create_game(%{name: "Tom Clancy: Rainbow Six Siege", appid: 359550})
+
+Manager.create_game(%{name: "Team Fortress 2", appid: 440})
 
 %Server{
   name: "dancing-lizard",
@@ -59,3 +70,70 @@ alias Exlibfunc.Servers.Server
   last_commit_message: "First big launch! 🤞"
 }
 |> Repo.insert!()
+
+
+donation_items = [
+  "Coffee",
+  "Milk",
+  "Beef",
+  "Chicken",
+  "Pork",
+  "Turkey",
+  "Potatoes",
+  "Cereal",
+  "Oatmeal",
+  "Eggs",
+  "Bacon",
+  "Cheese",
+  "Lettuce",
+  "Cucumber",
+  "Smoked Salmon",
+  "Tuna",
+  "Halibut",
+  "Broccoli",
+  "Onions",
+  "Oranges",
+  "Honey",
+  "Sourdough Bread",
+  "French Bread",
+  "Pear",
+  "Nuts",
+  "Apples",
+  "Coconut",
+  "Butter",
+  "Mozzarella",
+  "Tomatoes",
+  "Mushrooms",
+  "Rice",
+  "Pasta",
+  "Banana",
+  "Carrots",
+  "Lemons",
+  "Watermelons",
+  "Grapes",
+  "Strawberries",
+  "Melons",
+  "Cherries",
+  "Peaches",
+  "Pineapples",
+  "Kiwis",
+  "Eggplants",
+  "Avocados",
+  "Peppers",
+  "Corn",
+  "Sweet Potatoes",
+  "Bagels",
+  "Soup",
+  "Cookies"
+]
+
+for _i <- 1..12 do
+  item = Enum.random(donation_items)
+
+  %Donation{
+    item: item,
+    quantity: Enum.random(1..20),
+    days_until_expires: Enum.random(1..30)
+  }
+  |> Repo.insert!()
+end

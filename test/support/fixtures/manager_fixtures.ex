@@ -24,4 +24,20 @@ defmodule Exlibfunc.ManagerFixtures do
 
     server
   end
+
+  @doc """
+  Generate a volunteer.
+  """
+  def volunteer_fixture(attrs \\ %{}) do
+    {:ok, volunteer} =
+      attrs
+      |> Enum.into(%{
+        checked_out: true,
+        name: "some name",
+        phone: "some phone"
+      })
+      |> Exlibfunc.Manager.create_volunteer()
+
+    volunteer
+  end
 end

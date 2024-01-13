@@ -36,7 +36,7 @@ defmodule ExlibfuncWeb.ServerLive do
         <div class="wrapper">
           <div class="server">
             <div class="header">
-              <h2 class="text-red-900"><%= @selected_server.name %></h2>
+              <h2><%= @selected_server.name %></h2>
               <span class={@selected_server.status}>
                 <%= @selected_server.status %>
               </span>
